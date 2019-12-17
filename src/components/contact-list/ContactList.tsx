@@ -15,7 +15,11 @@ const renderTabLists = groupedContacts => {
 
   return groups.map(group => (
     <Tab disabled={!groupedContacts[group].length} key={group}>
-      {group}
+      <p>
+        {group}
+
+        <span>{groupedContacts[group].length}</span>
+      </p>
     </Tab>
   ))
 }

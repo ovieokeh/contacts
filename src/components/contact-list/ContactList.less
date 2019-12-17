@@ -29,21 +29,52 @@
 
   .react-tabs {
     &__tab-list {
-      padding: 1rem;
+      padding: 1rem 0;
       padding-bottom: 0;
       border-color: #ccc;
     }
 
     &__tab {
-      border-radius: 5px 5px 0 0;
+      border-radius: 5px;
       font-weight: bolder;
+      padding: 0.5rem 1rem;
+      margin: 0.18rem;
+      color: #333;
 
       &:hover {
-        background-color: #ccc;
+        color: #fff;
+        background-color: #777;
+      }
+
+      p {
+        margin: 0;
+
+        span {
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          font-size: 0.6rem;
+          font-weight: 400;
+        }
       }
 
       &--selected {
+        background-color: #999;
         border-color: #ccc;
+        color: #fff;
+
+        p > span {
+          color: #fff;
+        }
+      }
+
+      &--disabled {
+        color: #bbb;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+        }
       }
     }
 
