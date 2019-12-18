@@ -34,6 +34,10 @@ export type IContactDetails = {
   }
 }
 
+export interface IGroupedContacts {
+  [x: string]: IContactList
+}
+
 export type IContactList = IContactDetails[]
 
 export type IContactsState = [IContactList, boolean]

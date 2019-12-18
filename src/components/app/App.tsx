@@ -1,15 +1,16 @@
 import * as React from 'react'
 import Loader from 'react-loader'
 import { Tab, Tabs, TabList } from 'react-tabs'
+import 'react-tabs/style/react-tabs.less'
 
 import useContacts from './useContacts'
 import renderContactList from './renderContactList'
 import { groupContacts } from '../helpers'
+import { IGroupedContacts } from '../../types'
 
-import 'react-tabs/style/react-tabs.less'
 import './App.less'
 
-const renderHeaderTabs = groupedContacts => {
+const renderHeaderTabs = (groupedContacts: IGroupedContacts) => {
   const groups = Object.keys(groupedContacts).sort()
 
   return groups.map(group => (

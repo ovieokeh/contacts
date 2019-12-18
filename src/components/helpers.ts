@@ -1,11 +1,11 @@
-import { IContactDetails, IContactList } from '../types'
+import { IContactDetails, IContactList, IGroupedContacts } from '../types'
 
 export const alphabet: string[] = Array.apply(
   undefined,
   Array(26)
 ).map((_, y) => String.fromCharCode(y + 65))
 
-export const groupContacts = (contacts: IContactList): IContactList => {
+export const groupContacts = (contacts: IContactList): IGroupedContacts => {
   // to hold the contacts grouped by last name
   const groupedContacts = {}
 
@@ -23,7 +23,7 @@ export const groupContacts = (contacts: IContactList): IContactList => {
     }
   })
 
-  return groupedContacts as IContactList
+  return groupedContacts as IGroupedContacts
 }
 
 export const getName = (contact: IContactDetails) =>
