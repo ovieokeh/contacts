@@ -46,7 +46,7 @@ const App: React.FC = () => {
         <div className="contacts-container">
           <h2 className="contacts-container__heading">My Contact List</h2>
 
-          <Tabs>
+          <Tabs onSelect={() => setSelectedContact(null)}>
             <TabList>{renderHeaderTabs(groupedContacts)}</TabList>
             <div className="contacts">
               {renderContactList(
