@@ -30,8 +30,10 @@ const App: React.FC = () => {
   function onContactSelect(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const target = e.target as HTMLDivElement
 
-    if (selectedContact && selectedContact.id === target.id) {
-      setSelectedContact(null)
+    if (selectedContact) {
+      if (selectedContact.id === target.id) return
+
+      if (target.id === 'reset') setSelectedContact(null)
       return
     }
 

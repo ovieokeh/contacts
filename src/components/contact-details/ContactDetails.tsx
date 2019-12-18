@@ -7,7 +7,7 @@ import { getName } from '../helpers'
 interface IProps {
   contact: IContactDetails
   currentlySelected: HTMLDivElement
-  onContactSelect: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  onContactSelect: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }
 
 const ContactInfo: React.FC<IProps> = ({
@@ -35,11 +35,12 @@ const ContactInfo: React.FC<IProps> = ({
         {getName(contact)}
       </p>
 
-      <Collapse
-        isOpened={isSelected}
-        initialStyle={{ height: '0px', overflow: 'hidden' }}
-      >
+      <Collapse isOpened={isSelected}>
         <div className="contacts__contact__details">
+          <button id="reset" type="button" onClick={onContactSelect}>
+            X
+          </button>
+
           <img alt={contact.name.first} src={contact.picture.medium} />
           <p>{getName(contact)}</p>
 
