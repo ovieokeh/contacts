@@ -4,8 +4,9 @@
   "description": "Eurail technical challenge",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel public/index.html -p 4040",
-    "build": "parcel build public/index.html --out-dir build --no-source-maps --no-content-hash"
+    "build": "parcel build public/index.html --out-dir build --no-source-maps --no-content-hash",
+    "deploy": "npm run build && firebase deploy",
+    "dev": "parcel public/index.html -p 4040"
   },
   "repository": {
     "type": "git",
