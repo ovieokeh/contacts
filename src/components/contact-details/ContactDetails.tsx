@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Collapse } from 'react-collapse'
 
+import Collapse from '../collapse/Collapse'
 import { IContactDetails } from '../../types'
 import { getName } from '../helpers'
 
@@ -35,7 +35,7 @@ const ContactInfo: React.FC<IProps> = ({
         {getName(contact)}
       </p>
 
-      <Collapse isOpened={isSelected}>
+      <Collapse isOpen={isSelected}>
         <div className="contacts__contact__details">
           <button id="reset" type="button" onClick={onContactSelect}>
             X

@@ -1,0 +1,13 @@
+.collapse {
+  overflow: hidden;
+
+  &.closed {
+    height: 0;
+    transition: height 250ms ease-out;
+  }
+
+  &.open {
+    height: 263px;
+    transition: height 250ms ease-in;
+  }
+}
