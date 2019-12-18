@@ -1,4 +1,7 @@
-export type ContactDetails = {
+export type IContactDetails = {
+  id: {
+    value: string
+  }
   name: {
     title: string
     first: string
@@ -24,8 +27,13 @@ export type ContactDetails = {
   }
   email: string
   phone: string
+  picture: {
+    large: string
+    medium: string
+    thumbnail: string
+  }
 }
 
-export type ContactList = ContactDetails[]
+export type IContactList = IContactDetails[]
 
-export type ContactsState = [ContactList, boolean]
+export type IContactsState = [IContactList, boolean]

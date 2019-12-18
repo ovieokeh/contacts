@@ -2,7 +2,165 @@
   url('https://fonts.googleapis.com/css?family=Maven+Pro&display=swap');
 
 .app {
-  padding: 2.5rem 1rem;
+  padding: 0 1rem;
   max-width: 1014px;
   margin: auto;
+}
+
+.ReactCollapse {
+  transition: height 250ms ease-out;
+
+  &--collapse {
+    transition: height 250ms ease-in;
+  }
+}
+
+.contacts-container {
+  background-color: #fff;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 12px -2px rgba(148, 148, 148, 0.82);
+
+  &__heading {
+    color: rgb(59, 67, 92);
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .contacts {
+    max-height: 55vh;
+    overflow: scroll;
+
+    &__contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      min-height: 60px;
+      border-bottom: 1px solid #f4f4f4;
+
+      &.selected {
+        background-color: #f4f4f4;
+        padding: 0.5rem 0;
+        padding-bottom: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #f4f4f4;
+      }
+
+      &__name {
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+        overflow: hidden;
+        height: 20px;
+        transition: height ease-out 200ms;
+
+        &.hidden {
+          opacity: 0;
+          height: 0;
+          margin: 0;
+          transition: height ease-in 200ms;
+        }
+      }
+
+      &__details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 80px;
+          object-fit: contain;
+        }
+
+        img ~ p {
+          font-size: 1.3rem;
+          font-weight: bolder;
+          margin-bottom: 0;
+        }
+
+        &__info {
+          width: 100%;
+          padding: 1rem;
+          margin-top: 1rem;
+          background-color: #3b435c;
+          color: #fff;
+
+          p {
+            margin: 0.5rem 0;
+          }
+        }
+      }
+    }
+  }
+
+  .react-tabs {
+    &__tab-list {
+      padding: 1rem 0;
+      padding-bottom: 0;
+      border-color: #ccc;
+    }
+
+    &__tab {
+      border-radius: 5px;
+      font-weight: bolder;
+      padding: 0.5rem 1rem;
+      margin: 0.18rem;
+      color: #333;
+
+      &:hover {
+        color: #fff;
+        background-color: #777;
+      }
+
+      p {
+        margin: 0;
+
+        span {
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          font-size: 0.6rem;
+          font-weight: 400;
+        }
+      }
+
+      &--selected {
+        background-color: #999;
+        border-color: #ccc;
+        color: #fff;
+
+        p > span {
+          color: #fff;
+        }
+      }
+
+      &--disabled {
+        color: #bbb;
+        cursor: not-allowed;
+
+        &:hover {
+          color: #bbb;
+          background-color: transparent;
+        }
+      }
+    }
+
+    &__tab-panel {
+      &--selected {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-auto-rows: minmax(30px, max-content);
+        gap: 0 1rem;
+        max-height: 480px;
+        min-height: 200px;
+      }
+    }
+  }
 }

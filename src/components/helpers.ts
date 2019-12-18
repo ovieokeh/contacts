@@ -1,11 +1,11 @@
-import { ContactList, ContactDetails } from '../../types'
+import { IContactDetails, IContactList } from '../types'
 
 export const alphabet: string[] = Array.apply(
   undefined,
   Array(26)
 ).map((_, y) => String.fromCharCode(y + 65))
 
-export const groupContacts = (contacts: ContactList) => {
+export const groupContacts = (contacts: IContactList): IContactList => {
   // to hold the contacts grouped by last name
   const groupedContacts = {}
 
@@ -23,8 +23,8 @@ export const groupContacts = (contacts: ContactList) => {
     }
   })
 
-  return groupedContacts
+  return groupedContacts as IContactList
 }
 
-export const getName = (contact: ContactDetails) =>
+export const getName = (contact: IContactDetails) =>
   `${contact.name.first}, ${contact.name.last.toUpperCase()}`
